@@ -34,6 +34,9 @@ class Person(TimeStampedModel):
         COMPANY = "company", "Компания"
         SERVICE = "service", "Сервис"
         OTHER = "other", "Другое"
+        FAMILY = "family", "Семья"
+        SHOP = "shop", "Магазин"
+        DEBTORS = "debtors", "Должники"
 
     name = models.CharField(max_length=150, unique=True)
     normalized_name = models.CharField(max_length=150, blank=True, db_index=True)
@@ -47,6 +50,10 @@ class Person(TimeStampedModel):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Люди или магазины"
+        verbose_name_plural = "Люди или магазины"
 
 
 class Category(TimeStampedModel):
@@ -68,6 +75,10 @@ class Category(TimeStampedModel):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Категория"
+        verbose_name_plural = "Категорий"
 
 
 class ImportBatch(TimeStampedModel):
@@ -140,6 +151,8 @@ class Transaction(TimeStampedModel):
             models.Index(fields=["source"]),
             models.Index(fields=["fingerprint"]),
         ]
+        verbose_name = "Транзакций"
+        verbose_name_plural = "Транзакций"
 
     def save(self, *args, **kwargs):
         if not self.fingerprint:
