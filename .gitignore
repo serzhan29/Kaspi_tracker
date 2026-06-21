@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+db.sqlite3
+media/
+staticfiles/
+
+# Virtual env
+venv/
+env/
+.venv/
+
+# Environment
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Migrations cache
+*.pot
+
+# mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Docker
+*.pid
+
+# PostgreSQL dumps
+*.sql
+
+# Uploaded imports
+uploads/
+imports/
+
+# Temporary files
+tmp/
+temp/
